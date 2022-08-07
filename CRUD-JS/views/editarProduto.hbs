@@ -1,0 +1,54 @@
+{{#unless error}}
+<div class="bg-light p-5 rounded mt-3">
+    <h1>Editar</h1>
+    <form action="/atualizarProduto" method="post">
+        <div class="row mt-5">
+            <div class="col-md-5 mb-3">
+                <label for="nome" class="form-label">cod barra</label>
+                <input value="{{cod_barra}}"  type="text" class="form-control" id="id" name="id" >
+            </div>
+            <div class="col-md-5 mb-3">
+                <label for="nome" class="form-label">nome</label>
+                <input value="{{nome}}"  type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">Bloqueado</label>
+                 <input value="{{bloqueio}}" type="text" class="form-control" id="bloqueio" name="bloqueio" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">largura</label>
+                 <input value="{{largura}}" type="text" class="form-control" id="bloqueio" name="largura" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">altura</label>
+                 <input value="{{altura}}" type="text" class="form-control" id="bloqueio" name="altura" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">peso</label>
+                 <input value="{{peso}}" type="text" class="form-control" id="bloqueio" name="peso" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">comprimento</label>
+                 <input value="{{comprimento}}" type="text" class="form-control" id="bloqueio" name="comprimento" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">posição estoque</label>
+                 <input value="{{posicao}}" type="text" class="form-control" id="bloqueio" name="posicao" required>
+            </div>
+            <div class="col-md-5 mb-3">
+                 <label for="Bloqueio" class="form-label">embalagem</label>
+                 <input value="{{embalagem}}" type="text" class="form-control" id="bloqueio" name="embalagem" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <button class="mt-3 p-3 w-100 btn btn-warning">Editar</button>
+            </div>
+        </div>
+    </form>
+  </div>
+  {{else}}
+  <div class="card bg-danger text-white">
+    <div class="card-body">
+        Houve um problema: {{problema}}
+    </div>
+  </div>
+  {{/unless}}
