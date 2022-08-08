@@ -1,32 +1,28 @@
 <div class="p-5 rounded mt-3">
-  <h1>Listar usuarios</h1>
+  <h1>Listar Setores</h1>
   {{#if table}}
   <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Data Criação</th>
-        <th scope="col">Usuario bloqueado</th>
+        <th scope="col">Setor</th>
       </tr>
     </thead>
     <tbody>
-      {{#each usuarios}}
+      {{#each setors}}
       <tr>
-        <th scope="row">{{id_usuario}}</th>
-        <td>{{nome}}</td>
-        <td>{{data}}</td>
-        <td>{{bloqueio}}</td>
+        <th scope="row">{{id_setor}}</th>
+        <th scope="row">{{nome}}</th>
         <td>
           <div class="row g-1">
             <div class="col-6 col-md-6">
-              <form action="/editar" method="post">
-                <input type="hidden" name="id" value="{{id_usuario}}">
+              <form action="/editarSetor" method="post">
+                <input type="hidden" name="id" value="{{id_setor}}">
                 <button class="btn btn-info">Editar</a>
               </form>
             </div>
             <div class="col-6 col-md-6">
-              <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal_{{id_usuario}}"
+              <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal_{{id_setor}}"
                 class="btn btn-danger">
                 Deletar
               </button>
@@ -35,7 +31,7 @@
         </td>
       </tr>
       <!-- Modal -->
-      <div class="modal fade" id="deleteModal_{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" id="deleteModal_{{id_setor}}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -44,11 +40,11 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body fw-bold text-danger">
-              Tem certeza que quer deletar o usuário {{nome}}?
+              Tem certeza que quer deletar o setor {{nome}}?
             </div>
             <div class="modal-footer">
-              <form action="/deletar" method="post">
-                <input type="hidden" name="id" value="{{id_usuario}}">
+              <form action="/deletarSetor" method="post">
+                <input type="hidden" name="id" value="{{id_setor}}">
                 <button type="submit" class="btn btn-primary btn-danger">Sim, quero deletar</button>
               </form>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

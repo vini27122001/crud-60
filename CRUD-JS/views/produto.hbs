@@ -1,58 +1,72 @@
 <div class="bg-light p-5 rounded mt-3">
-    <h1>cadastrar</h1>
+    <h1>cadastrar Poduto</h1>
     {{>_msg}}
     <form action="/prod" method="post">
         <div class="row mt-5">
             <div class="col-md-5 mb-3">
                 <label for="nome" class="form-label">Cod Barras</label>
-                <input type="text" class="form-control" id="nome" name="cod_barra" placeholder="Digite seu nome" required>
+                <input type="text" class="form-control" id="nome" name="cod_barra" required>
             </div>
             <div class="col-md-5 mb-3">
-                 <label for="senha" class="form-label">Nome produto</label>
-                 <input type="text" class="form-control" id="senha" name="nome" placeholder="Digite sua senha" required>
+                <label for="senha" class="form-label">Nome produto</label>
+                <input type="text" class="form-control" id="senha" name="nome" required>
             </div>
             <div class="col-md-5 mb-3">
                 <label for="nome" class="form-label">Largura</label>
-                <input type="text" class="form-control" id="nome" name="largura" placeholder="Digite seu nome" required>
+                <input type="text" class="form-control" id="nome" name="largura" required>
             </div>
             <div class="col-md-5 mb-3">
-                 <label for="senha" class="form-label">Altura</label>
-                 <input type="text" class="form-control" id="senha" name="altura" placeholder="Digite sua senha" required>
+                <label for="senha" class="form-label">Altura</label>
+                <input type="text" class="form-control" id="senha" name="altura" required>
             </div>
             <div class="col-md-5 mb-3">
                 <label for="nome" class="form-label">Peso</label>
-                <input type="text" class="form-control" id="nome" name="peso" placeholder="Digite seu nome" required>
+                <input type="text" class="form-control" id="nome" name="peso" required>
             </div>
             <div class="col-md-5 mb-3">
-                 <label for="senha" class="form-label">Comprimento</label>
-                 <input type="text" class="form-control" id="senha" name="comprimento" placeholder="Digite sua senha" required>
+                <label for="senha" class="form-label">Comprimento</label>
+                <input type="text" class="form-control" id="senha" name="comprimento" required>
             </div>
             <div class="col-md-5 mb-3">
                 <label for="nome" class="form-label">Bloqueio</label>
-                <input type="text" class="form-control" id="nome" name="bloqueio" placeholder="Digite seu nome" required>
+                <input type="text" class="form-control" id="nome" name="bloqueio" required>
             </div>
-            
             <div class="col-md-5 mb-3">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Embalagem do Produto</option>
-                <option value="1">one</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+                <label for="nome" class="form-label">Quantidade</label>
+                <input type="text" class="form-control" id="nome" name="quantidade" required>
             </div>
-            
             <div class="col-md-5 mb-3">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Posição no Estoque</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="embalagem" name="embalagem">
+                        <option selected>Embalagem produto</option>
+                        {{#each embalagems}}
+                        <option value={{id_embalagem}}>{{tipo_embalagem}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
             </div>
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="posicao">
+                        <option selected>Posição estoque</option>
+                        {{#each posicaos}}
+                        <option value={{id_posicao}}>{{descricao}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
             <div class="col-md-2 mb-3">
                 <button class="mt-3 p-3 w-100 btn btn-success">Cadastrar</button>
             </div>
-            
         </div>
     </form>
-  </div>
+</div>

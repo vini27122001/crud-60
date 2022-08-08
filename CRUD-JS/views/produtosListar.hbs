@@ -1,34 +1,36 @@
 <div class="p-5 rounded mt-3">
-    <h1>Listar produtos</h1>
-    {{#if table}}
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">cod barra</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Posição estoque</th>
-      <th scope="col">largura</th>
-      <th scope="col">altura</th>
-      <th scope="col">peso</th>
-      <th scope="col">comprimento</th>
-      <th scope="col">embalagem</th>
-      <th scope="col">bloqueio</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each produtos}}
-    <tr>
-      <th scope="row">{{cod_barra}}</th>
-      <td>{{nome}}</td>
-      <td>{{id_pos}}</td>
-      <td>{{largura}}</td>
-      <td>{{altura}}</td>
-      <td>{{peso}}</td>
-      <td>{{comprimento}}</td>
-      <td>{{id_emb}}</td>
-      <td>{{bloqueio}}</td>
-      <td>
-        <div class="row g-1">
+  <h1>Listar produtos</h1>
+  {{#if table}}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">cod barra</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Posição estoque</th>
+        <th scope="col">largura</th>
+        <th scope="col">altura</th>
+        <th scope="col">peso</th>
+        <th scope="col">comprimento</th>
+        <th scope="col">embalagem</th>
+        <th scope="col">bloqueio</th>
+        <th scope="col">quantidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each produtos}}
+      <tr>
+        <th scope="row">{{cod_barra}}</th>
+        <td>{{nome}}</td>
+        <td>{{id_pos}}</td>
+        <td>{{largura}}</td>
+        <td>{{altura}}</td>
+        <td>{{peso}}</td>
+        <td>{{comprimento}}</td>
+        <td>{{id_emb}}</td>
+        <td>{{bloqueio}}</td>
+        <td>{{qtd}}</td>
+        <td>
+          <div class="row g-1">
             <div class="col-6 col-md-6">
               <form action="/editarProduto" method="post">
                 <input type="hidden" name="id" value="{{cod_barra}}">
@@ -36,42 +38,44 @@
               </form>
             </div>
             <div class="col-6 col-md-6">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal_{{cod_barra}}" class="btn btn-danger">
-                  Deletar
-                  </button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal_{{cod_barra}}"
+                class="btn btn-danger">
+                Deletar
+              </button>
             </div>
+          </div>
+        </td>
+      </tr>
+      <!-- Modal -->
+      <div class="modal fade" id="deleteModal_{{cod_barra}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">CONFIRMAÇÃO</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body fw-bold text-danger">
+              Tem certeza que quer deletar o produto {{nome}}?
+            </div>
+            <div class="modal-footer">
+              <form action="/deletarProduto" method="post">
+                <input type="hidden" name="id" value="{{cod_barra}}">
+                <button type="submit" class="btn btn-primary btn-danger">Sim, quero deletar</button>
+              </form>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
         </div>
-      </td>
-    </tr>
-        <!-- Modal -->
-<div class="modal fade" id="deleteModal_{{cod_barra}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">CONFIRMAÇÃO</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
-      <div class="modal-body fw-bold text-danger">
-        Tem certeza que quer deletar o produto {{nome}}?
-      </div>
-      <div class="modal-footer">
-        <form action="/deletarProduto" method="post">
-        <input type="hidden" name="id" value="{{cod_barra}}">
-        <button type="submit" class="btn btn-primary btn-danger" >Sim, quero deletar</button>
-        </form>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-      </div>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <div class="card mt-4">
+    <div class="card-body">
+      Nenhum item encontrado
     </div>
   </div>
+  {{/if}}
 </div>
-    {{/each}}
-  </tbody>
-</table>
-{{else}}
-<div class="card mt-4">
-  <div class="card-body">
-    Nenhum item encontrado
-  </div>
-</div>
-{{/if}}
-  </div>

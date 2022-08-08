@@ -1,0 +1,135 @@
+<div class="bg-light p-5 rounded mt-3 float-start w-50">
+    <h1>Entrada Poduto</h1>
+    {{>_msg}}
+    <form action="/entradaProduto" method="post">
+        <div class="col-md-5 mb-3">
+            <div class="col-md-5 mb-3">
+                <label for="nome" class="form-label">Quantidade produto</label>
+                <input type="text" class="form-control" id="nome" name="qtd" required>
+            </div>
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="usuario">
+                        <option selected>Usuario</option>
+                        {{#each usuarios}}
+                        <option value={{id_usuario}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="produto">
+                        <option selected>Produto</option>
+                        {{#each produtos}}
+                        <option value={{cod_barra}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="setor">
+                        <option selected>Setor</option>
+                        {{#each setores}}
+                        <option value={{id_setor}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-2 mb-3">
+            <button class="mt-3 p-3 w-100 btn btn-success">Entrada</button>
+        </div>
+
+    </form>
+</div>
+
+
+<div class="bg-light p-5 rounded mt-3 w-50 float-start">
+
+    <h1>Saida produto</h1>
+    <form action="/saidaProduto" method="post">
+        <div class="col-md-5 mb-3">
+            <div class="col-md-5 mb-3">
+                <label for="nome" class="form-label">Quantidade produto</label>
+                <input type="text" class="form-control" id="nome" name="qtd" required>
+            </div>
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="usuario">
+                        <option selected>Usuario</option>
+                        {{#each usuarios}}
+                        <option value={{id_usuario}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
+
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="produto">
+                        <option selected>Produto</option>
+                        {{#each produtos}}
+                        <option value={{cod_barra}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+
+
+
+            <div class="col-md-5 mb-3">
+                <td>
+                    {{#if table}}
+                    <select class="browser-default custom-select" id="posicao" name="setor">
+                        <option selected>Setor</option>
+                        {{#each setores}}
+                        <option value={{id_setor}}>{{nome}}</option>
+                        {{/each}}
+                    </select>
+                    {{else}}
+                    Nenhum resultado para a consulta
+                    {{/if}}
+                </td>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-2 mb-3">
+            <button class="mt-3 p-3 w-100 btn btn-warning">Saida</button>
+        </div>
+    </form>
+</div>

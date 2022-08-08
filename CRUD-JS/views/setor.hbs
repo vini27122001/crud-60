@@ -1,12 +1,11 @@
 <div class="bg-light p-5 rounded mt-3">
-    <h1>cadastrar Embalagem</h1>
+    <h1>cadastrar Setor</h1>
     {{>_msg}}
-    <form action="/cadEmb" method="post">
+    <form action="/cadSetor" method="post">
         <div class="row mt-5">
             <div class="col-md-5 mb-3">
-                <label for="nome" class="form-label">tipo embalagem</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="ex: aço,plástico..."
-                    required>
+                <label for="nome" class="form-label">Nome Setor</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="ex:TI , RH" required>
             </div>
             <div class="col-md-2 mb-3">
                 <button class="mt-3 p-3 w-100 btn btn-success">Cadastrar</button>
