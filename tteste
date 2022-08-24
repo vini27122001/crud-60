@@ -39,4 +39,17 @@ são executadas em sistemas de tempo real.
 10-São sistemas fortemente acoplados que compartilham o mesmo espaço de endereçamento e são gerenciados por um único sistema operacional
 Com o multiprocessamento, você terá mais tarefas concluídas em um período de tempo muito menor ou seja aumenta a produtividade
 
-11-
+11- sitemas fortemente acoplados existe apenas um espaço de  (memória) compartilhado por todos os processadores
+nos fracamente acoplados cada sistema tem sua própria memória individual.
+
+12- gerencia de processos pode ser entendido como um programa que está em execução. Em sistemas multiusuário, cada usuário é associado a um processo. O processador executa o programa do usuário em um determinado intervalo de tempo e, no instante seguinte, poderá executar outro programa
+de outro usuário. aperfeiçoamento dos processos
+
+gerencia de memoria : cada dia que passa os programadores necessitam de mais memória e mais programas rodando simultaneamente para poderem tratar cada vez mais informações
+O tratamento necessário da memória utilizada não é uma tarefa fácil de ser implementada por isso necessita de administrar bem e distribuir a memoria para melhor desempenho
+
+
+
+
+
+
