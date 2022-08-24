@@ -32,4 +32,11 @@ conhecida pelo termo firmware Este programa deve alocar e carregar na memória r
 No processamento batch, são feitos todos os processamentos e os registros são salvos em um buffer ou algo do tipo. Depois, num determinado momento 
 os registros são feitos, na mesma sequência do processamento.
 
-9-
+9-O processamento em tempo real envolve apenas um aplicativo. o processamento de compartilhamento de tempo tem que lidar com vários aplicativos diferentes.
+Aplicações de controle de processos, como no monitoramento de refinarias de petróleo, controle de tráfego aéreo, de usinas termoelétricas e nucleares 
+são executadas em sistemas de tempo real.
+
+10-São sistemas fortemente acoplados que compartilham o mesmo espaço de endereçamento e são gerenciados por um único sistema operacional
+Com o multiprocessamento, você terá mais tarefas concluídas em um período de tempo muito menor ou seja aumenta a produtividade
+
+11-
