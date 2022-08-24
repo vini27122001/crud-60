@@ -18,4 +18,18 @@ https://www.creative-tim.com/product/soft-ui-dashboard-react#
 a 2 esta errada porque um sistema operacional  tem como objetivo funcionar como uma interface entre o usuário e o computador tornando sua utilização mais simples rápida e segura.
 a 3 esta errada porque é funçao do sistema operacional coordenar e controlar o hardware pelos diversos aplicativos
 
-4 -
+4 - Para que um computador comece a operar quando é ligado ou reiniciado, por exemplo, precisa dispor de um programa para executar sua inicialização, denominado
+bootstrap Este programa normalmente é armazenado em memória do tipo rom dentro do hardware do computador,
+conhecida pelo termo firmware Este programa deve alocar e carregar na memória ram do computador, o kernel do sistema operacional.
+
+5- F-V-V-V
+
+6-Sistema multitarefa permite repartir a utilização do processador entre várias tarefas aparentemente simultâneas
+  Sistemas monotarefa permite apenas a realização de uma tarefa de cada vez
+  
+  8- Os sistemas de tempo compartilhado (time-sharing) permitem a interação dos usuários com o sistema, através de teclados, vídeo e mouse.
+  O usuário pode interagir diretamente com o sistema em cada fase do desenvolvimento de suas aplicações e se preciso, modificar.
+No processamento batch, são feitos todos os processamentos e os registros são salvos em um buffer ou algo do tipo. Depois, num determinado momento 
+os registros são feitos, na mesma sequência do processamento.
+
+9-
